@@ -1,0 +1,28 @@
+import express, { ErrorRequestHandler, Request, Response } from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import apiRoutes from './routes/api';
+
+
+dotenv.config();
+
+const server = express();
+
+server.use(cors());
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
+server.use(apiRoutes);
+
+
+server.use((req: Request, res: Response)=>{
+    res.status(404);
+    res.json({error: 'Endpoint não encontrado.'});
+});
+
+const errorHandler: ErrorRequestHandler = (err, req, res, next)=>{
+    res.status(400);
+    res.json({error: 'Ocorreu algum erro.'});
+}
+
+server.use(errorHandler);
+server.listen(process.env.PORT);
