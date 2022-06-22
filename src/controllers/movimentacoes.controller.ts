@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { Conteiner } from "../models/Conteiner";
 import { Movimentacao } from "../models/Movimentacao";
 
 export const getMovimentacoes = async (req: Request, res: Response) => {
