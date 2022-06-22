@@ -14,5 +14,7 @@ Projeto desenvolvido para fins de aprendizado.
 
 #
 <h3>Features</h3>
--Crud de Contêiner
--Crud de Movimentações
+<ul>
+    <li>Crud de Contêiner</li>
+    <li>Crud de Movimentações</li> 
+</ul>  
